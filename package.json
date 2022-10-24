@@ -1,0 +1,19 @@
+{
+  "name": "100_willyprojekt",
+  "version": "1.0.0",
+  "description": "Bestellapp für Willies Mensa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ossnerjoh/Willies-Reservierungsapp.git"
+  },
+  "author": "Johann Oßner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ossnerjoh/Willies-Reservierungsapp/issues"
+  },
+  "homepage": "https://github.com/ossnerjoh/Willies-Reservierungsapp#readme"
+}

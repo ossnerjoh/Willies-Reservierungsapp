@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <!-- JavaScript Bundle with Popper -->
+
+    <title>Willies Mensa</title>
+  </head>
+
+  <body>
+    <%- include("partials/navbar.ejs"); %>
+
+    <!-- ############### Main ################-->
+    <div class="container">
+      <form action="/admin/speise-hinzufuegen" method="post" class="mb-3">
+        <div class="mb-3">
+          <label for="dishname" class="form-label">Name des Gerichts</label>
+          <input
+            type="text"
+            placeholder="Schweinebraten"
+            class="form-control"
+            name="dishname"
+            id="dishname"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Details</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            placeholder="mit Dunkelbiersoß' und Semmelknödel"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="side" class="form-label">Name des Gerichts</label>
+          <input
+            type="text"
+            placeholder="Salat"
+            class="form-control"
+            name="side"
+            id="side"
+          />
+        </div>
+        <div class="mb-3 form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="veggie"
+            name="isVeggie"
+            value="true"
+          />
+          <label class="form-check-label" for="veggie">vegetarisch?</label>
+        </div>
+        <button type="submit" class="btn btn-dark">Submit</button>
+      </form>
+
+      <!-- Success Alert -->
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Sehr gut!</strong> Das Gericht wurde erfolgreich in die
+        Datenbank eingefügt.
+        <hr />
+        <p class="mb-0">
+          <h6> <%= name %>  </h6>
+          <p> <%= description %> <br>
+              <%= side %> <br>
+              <%= isVeggie %> 
+          </p>         
+        </p>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

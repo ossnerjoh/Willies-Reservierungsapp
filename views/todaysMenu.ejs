@@ -15,38 +15,22 @@
 </head>
 
 <body>
-    <!--############### Navbar ###################-->
-    <nav class="navbar navbar-expand-lg bg-light mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Willies Mensa</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 text-align-right">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Mittagessen</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Brotzeitkistl</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    
+    <%- include("partials/navbar.ejs"); %> 
 
     <!-- ############### Main ################-->
     <div class="container">
+        <div class="date-display">
+            <h3>Heute ist der <%= new Date().toLocaleDateString(); %> </h3>
+        </div>
         <div class="row gy-3">
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Hähnchen Curry</h5>
+                        <h5 class="card-title"> <%= menu.meat.name %> </h5>
                         <div class="details">
-                            <p class="card-text mb-0">Mit Reis</p>
-                            <p class="card-text">Salat</p>
+                            <p class="card-text mb-0"> <%= menu.meat.description %></p>
+                            <p class="card-text"><%= menu.meat.side %></p>
                             <a href="#" class="btn btn-dark btn-sm">Reservieren</a>
                         </div>
                     </div>
@@ -58,10 +42,10 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Gemüse Curry</h5>
+                        <h5 class="card-title"> <%= menu.veggie.name %> </h5>
                         <div class="details">
-                            <p class="card-text mb-0">Mit Reis</p>
-                            <p class="card-text">Salat</p>
+                            <p class="card-text mb-0"> <%= menu.veggie.description %></p>
+                            <p class="card-text"><%= menu.veggie.side %></p>
                             <a href="#" class="btn btn-dark btn-sm">Reservieren</a>
                         </div>
                     </div>

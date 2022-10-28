@@ -20,7 +20,7 @@
 
     <!-- ############### Main ################-->
     <div class="container">
-        <form action="/admin/speise-hinzufuegen" method="post">
+        <form action="/dishes/add" method="post">
             <div class="mb-3">
               <label for="dishname" class="form-label">Name des Gerichts</label>
               <input type="text" placeholder="Schweinebraten" class="form-control" name="dishname" id="dishname">
@@ -31,7 +31,7 @@
             </div>
             <div class="mb-3">
                 <label for="side" class="form-label">Name des Gerichts</label>
-                <input type="text" placeholder="Salat" class="form-control" name="side" id="side">
+                <input type="text" placeholder="Salat" class="form-control" name="side" value="Salat" id="side">
               </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="veggie" name="isVeggie" value="true">

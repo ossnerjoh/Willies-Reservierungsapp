@@ -60,7 +60,7 @@ const Reservation = mongoose.model("Reservation", reservationSchema);
 // res.save();
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.redirect("/today");
 });
 
 // show todays menu
@@ -81,10 +81,10 @@ app.get("/today", (req, res) => {
   }).populate(["meat", "veggie"]);
 });
 
-app.get("/admin/speise-hinzufuegen", (req, res) => {
+app.get("/dishes/add", (req, res) => {
   res.render("addDishForm");
 });
-app.post("/admin/speise-hinzufuegen", (req, res) => {
+app.post("/dishes/add", (req, res) => {
   const data = req.body;
   console.log(data);
 
@@ -104,11 +104,23 @@ app.post("/admin/speise-hinzufuegen", (req, res) => {
   });
 });
 
-app.get("/admin/gerichte", (req, res) => {
+app.get("/dishes/show", (req, res) => {
   Dish.find({}, function (err, dishes) {
     res.render("showDishes", { dishes });
   });
 });
+
+app.post("/dishes/delete/:id", (req, res)=>{
+    console.log(req.params);
+    Dish.findByIdAndRemove(req.params.id, (err, doc)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect("/admin/gerichte");
+        }
+    }); // executes
+
+})
 
 app.listen(port, () => {
   console.log("server started at port 5000");

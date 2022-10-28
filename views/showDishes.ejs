@@ -36,11 +36,16 @@
         </thead>
         <tbody>
           <% dishes.forEach(dish => { %>
-            <tr>
+            <tr data-id= <%= dish._id %> >
               <td> <%= dish.name %> </th>
               <td><%= dish.description %> </td>
               <td><%= dish.side  %></td>
               <td><%= dish.isVeggie  %></td>
+              <td>
+              <form method = "post" action= <%= "/dishes/delete/"+dish._id %> >
+                <button class="btn btn-danger">Löschen</button>
+              </form>
+            </td>
             </tr>
           <% }) %>         
         </tbody>
